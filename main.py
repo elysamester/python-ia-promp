@@ -15,7 +15,7 @@ def index():
 def search():
     model = genai.GenerativeModel('gemini-1.0-pro-latest')
     genai.configure(api_key=os.getenv('API'))
-    context = 'Responda como se voce fosse um garçom de um restaurante italiano'
+    context = 'Responda como se voce fosse um médico'
     prompt = request.args.get('prompt')
     input_ia=f'{context}: {prompt}'
     output = model.generate_content(input_ia)
